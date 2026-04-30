@@ -1,0 +1,9 @@
+backend/venv/
+backend/__pycache__/
+backend/instance/
+*.pyc
+.DS_Store
+debug.css
+backend/reset_admin.py
+backend/test_db.py
+backend/test_db2.py

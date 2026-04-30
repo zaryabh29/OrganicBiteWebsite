@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO & Meta Tags -->
+    <title>Organic Bite | Premium Fitness Meals</title>
+    <meta name="description" content="Organic Bite delivers premium, macro-calculated, 100% organic meals to help you achieve your fitness goals in Pakistan.">
+    <meta name="keywords" content="meal prep, fitness food, organic food delivery, healthy meals Lahore, diet plan, meal delivery Pakistan">
+    <meta property="og:title" content="Organic Bite | Premium Fitness Meals">
+    <meta property="og:description" content="Macro-calculated, 100% organic meal delivery.">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Organic+Bite">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons for elegant line icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <noscript><style>.fade-in-up,.fade-in-left,.fade-in-right{opacity:1!important;transform:none!important;}</style></noscript>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">Organic<span>Bite</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#plans">Meal Plans</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                    <i class="ph ph-sun"></i>
+                </button>
+                <button id="nav-login-btn" class="btn btn-outline" onclick="openModal('auth-modal')">Log In</button>
+                <button id="nav-dashboard-btn" class="btn btn-primary" onclick="openModal('dashboard-modal')" style="display: none;">Dashboard</button>
+                <button id="nav-admin-btn" class="btn btn-secondary" onclick="openModal('admin-modal')" style="display: none;">Admin Panel</button>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu"><i class="ph ph-list"></i></button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-container">
+            <div class="hero-content fade-in-up">
+                <div class="badge">100% Certified Organic</div>
+                <h1>Fuel Your Performance with <span class="text-gradient">Real Food</span>.</h1>
+                <p>We deliver certified organic, macro-calibrated, and hygienic meals directly to your door in Lahore, Islamabad, and Karachi. Achieve your fitness goals without the hassle of meal prep.</p>
+                <div class="hero-actions">
+                    <a href="#plans" class="btn btn-primary btn-large">Explore Meal Plans</a>
+                    <a href="#about" class="btn btn-secondary btn-large">Our Story</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <h3>100%</h3>
+                        <p>HACCP Certified</p>
+                    </div>
+                    <div class="stat">
+                        <h3>0%</h3>
+                        <p>Artificial Hormones</p>
+                    </div>
+                    <div class="stat">
+                        <h3>5k+</h3>
+                        <p>Meals Delivered</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image fade-in-left">
+                <img src="assets/hero.png" alt="Healthy Organic Fitness Meal Bowl">
+                <div class="floating-card macros-card">
+                    <i class="ph-fill ph-fire"></i>
+                    <div>
+                        <h4>550 kcal</h4>
+                        <p>High Protein, Low Fat</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition -->
+    <section id="features" class="features section-padding">
+        <div class="container">
+            <div class="section-header fade-in-up">
+                <h2>Why Choose Organic Bite?</h2>
+                <p>A unique combination of quality, trust, and convenience missing in most competitors.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card fade-in-up">
+                    <div class="icon-wrapper"><i class="ph ph-plant"></i></div>
+                    <h3>Certified Organic</h3>
+                    <p>Chemical-free and hormone-free ingredients. We source only the cleanest produce for your body.</p>
+                </div>
+                <div class="feature-card fade-in-up" style="transition-delay: 0.1s;">
+                    <div class="icon-wrapper"><i class="ph ph-chart-polar"></i></div>
+                    <h3>Macro-Calibrated</h3>
+                    <p>Every meal is scientifically designed to hit your specific macro targets for cutting, bulking, or maintenance.</p>
+                </div>
+                <div class="feature-card fade-in-up" style="transition-delay: 0.2s;">
+                    <div class="icon-wrapper"><i class="ph ph-shield-check"></i></div>
+                    <h3>Food Safety First</h3>
+                    <p>Prepared in a HACCP-certified commercial kitchen ensuring the highest hygiene standards in Pakistan.</p>
+                </div>
+                <div class="feature-card fade-in-up" style="transition-delay: 0.3s;">
+                    <div class="icon-wrapper"><i class="ph ph-moped"></i></div>
+                    <h3>Cold-Chain Delivery</h3>
+                    <p>Delivered fresh to your home using our reliable cold-chain logistics system. Ready to eat when you are.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meal Plans Section -->
+    <section id="plans" class="plans section-padding bg-darker">
+        <div class="container">
+            <div class="section-header fade-in-up">
+                <h2>Choose Your Goal</h2>
+                <p>Select the meal plan that perfectly aligns with your fitness objectives. You can change your plan anytime.</p>
+            </div>
+            
+            <div id="dynamic-plans-container" class="plans-grid">
+                <!-- Meal Plans will be loaded here dynamically from backend -->
+                <p class="loading-text" style="grid-column: 1 / -1; text-align: center;">Loading meal plans...</p>
+            </div>
+
+            <div class="custom-builder-promo" style="margin-top: 4rem;">
+                <div class="promo-content">
+                    <div class="badge">Advanced System</div>
+                    <h2>Can't find the perfect plan?</h2>
+                    <p>Use our interactive Custom Meal Builder to individually select your proteins, carbs, and veggies. We'll calculate the macros for you!</p>
+                    <button class="btn btn-primary" onclick="openCustomBuilder()">Start Building &rarr;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blogs Section (NEW) -->
+    <section id="blogs" class="section-padding">
+        <div class="container">
+            <div class="section-header fade-in-up">
+                <h2>Health & Nutrition Insights</h2>
+                <p>Read our latest articles on fitness, organic eating, and performance optimization.</p>
+            </div>
+            <div id="dynamic-blogs-container" class="blogs-grid">
+                <!-- Blogs will be loaded here dynamically from backend -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Audience -->
+    <section class="audience section-padding">
+        <div class="container">
+            <div class="audience-wrapper">
+                <div class="audience-text fade-in-left">
+                    <h2>Who is Organic Bite For?</h2>
+                    <p>We are building a community of health-conscious individuals who refuse to compromise on what they put in their bodies.</p>
+                    
+                    <div class="audience-list">
+                        <div class="audience-item">
+                            <div class="icon-circle"><i class="ph ph-barbell"></i></div>
+                            <div>
+                                <h4>Gym Members & Bodybuilders</h4>
+                                <p>Hitting your macros is hard. We make it effortless.</p>
+                            </div>
+                        </div>
+                        <div class="audience-item">
+                            <div class="icon-circle"><i class="ph ph-briefcase"></i></div>
+                            <div>
+                                <h4>Working Professionals</h4>
+                                <p>No time to cook? Get clean meals delivered straight to your office.</p>
+                            </div>
+                        </div>
+                        <div class="audience-item">
+                            <div class="icon-circle"><i class="ph ph-heart-beat"></i></div>
+                            <div>
+                                <h4>Health-Conscious Individuals</h4>
+                                <p>Avoid the "fake healthy" traps with our transparent nutrition labeling.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="audience-image-grid fade-in-right">
+                    <div class="grid-box box-1"><span>HACCP</span></div>
+                    <div class="grid-box box-2"><span>100% ORGANIC</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / Dynamic Reviews -->
+    <section id="reviews" class="testimonials section-padding bg-darker">
+        <div class="container">
+            <div class="section-header fade-in-up">
+                <h2>What Our Community Says</h2>
+                <p>Real results from real people in Pakistan.</p>
+            </div>
+            <div id="dynamic-reviews-container" class="reviews-grid">
+                <p class="loading-text" style="grid-column: 1 / -1; text-align: center;">Loading reviews...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about" class="about section-padding bg-darker">
+        <div class="container">
+            <div class="about-container">
+                <div class="about-content fade-in-up">
+                    <div class="badge">Our Story</div>
+                    <h2>Raising the Standard of Healthy Eating in Pakistan.</h2>
+                    <p>In Pakistan, many people rely on unhealthy or uncertified food falsely marketed as "healthy". There is a severe lack of verified organic providers, transparent labeling, and hygienic preparation.</p>
+                    <p><strong>Organic Bite was founded to solve this.</strong> Our purpose is to promote healthy living by providing clean, organic, and nutritionally balanced meals that actually support your fitness goals.</p>
+                    <a href="#contact" class="btn btn-outline mt-4">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & CTA -->
+    <section id="contact" class="contact section-padding">
+        <div class="container">
+            <div class="contact-wrapper fade-in-up">
+                <div class="contact-info">
+                    <h2>Ready to transform your diet?</h2>
+                    <p>Subscribe to our meal plans today or contact our nutritionists for a customized plan.</p>
+                    
+                    <div class="contact-details">
+                        <div class="detail-item">
+                            <i class="ph ph-map-pin"></i>
+                            <p>Available in Lahore, Islamabad, & Karachi</p>
+                        </div>
+                        <div class="detail-item">
+                            <i class="ph ph-envelope"></i>
+                            <p>hello@organicbite.pk</p>
+                        </div>
+                        <div class="detail-item">
+                            <i class="ph ph-whatsapp-logo"></i>
+                            <p>+92 300 1234567</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form">
+                    <h3>Send us a message</h3>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="John Doe" autocomplete="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="john@example.com" autocomplete="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="goal">Fitness Goal</label>
+                        <select id="goal">
+                            <option value="cutting">Fat Loss (Cutting)</option>
+                            <option value="lean">Maintenance (Lean)</option>
+                            <option value="bulking">Muscle Gain (Bulking)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="4" placeholder="How can we help you?"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary full-width">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">Organic<span>Bite</span></a>
+                    <p>The digital-first premium fitness meal brand in Pakistan. Certified organic, hygienic, and performance-based.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="ph ph-instagram-logo"></i></a>
+                        <a href="#"><i class="ph ph-facebook-logo"></i></a>
+                        <a href="#"><i class="ph ph-tiktok-logo"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#plans">Meal Plans</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#" onclick="event.preventDefault(); openLegal('terms')">Terms & Conditions</a></li>
+                        <li><a href="#" onclick="event.preventDefault(); openLegal('privacy')">Privacy Policy</a></li>
+                        <li><a href="#" onclick="event.preventDefault(); openLegal('refund')">Refund Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Organic Bite. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODALS -->
+    
+    <!-- Auth Modal -->
+    <div id="auth-modal" class="modal-overlay">
+        <div class="modal-content ">
+            <button class="close-modal" onclick="closeModal('auth-modal')"><i class="ph ph-x"></i></button>
+            
+            <div class="auth-tabs">
+                <button class="auth-tab active" onclick="switchAuthTab('login')">Log In</button>
+                <button class="auth-tab" onclick="switchAuthTab('register')">Register</button>
+            </div>
+
+            <div class="social-login-container">
+                <button class="btn social-btn google-btn" onclick="mockGoogleLogin()">
+                    <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" class="social-icon">
+                    Continue with Google
+                </button>
+                <button class="btn social-btn apple-btn" onclick="mockGoogleLogin()">
+                    <i class="ph-fill ph-apple social-icon" style="font-size: 1.5rem; color: #fff;"></i>
+                    Continue with Apple
+                </button>
+            </div>
+
+            <div class="auth-divider">
+                <span>or continue with email</span>
+            </div>
+            
+            <!-- Login Form -->
+            <form id="login-form" class="auth-form active">
+                <h3>Welcome Back</h3>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="login-email" autocomplete="username" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="login-password" autocomplete="current-password" required>
+                </div>
+                <p id="login-error" class="error-text"></p>
+                <button type="submit" class="btn btn-primary full-width">Log In</button>
+            </form>
+            
+            <!-- Register Form -->
+            <form id="register-form" class="auth-form" style="display: none;">
+                <h3>Create Account</h3>
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="register-name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="register-email" autocomplete="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="register-password" autocomplete="new-password" required>
+                </div>
+                <p id="register-error" class="error-text"></p>
+                <button type="submit" class="btn btn-primary full-width">Create Account</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Dashboard Modal -->
+    <div id="dashboard-modal" class="modal-overlay">
+        <div class="modal-content modal-large ">
+            <button class="close-modal" onclick="closeModal('dashboard-modal')"><i class="ph ph-x"></i></button>
+            <div class="dashboard-header">
+                <h2>My Dashboard</h2>
+                <button class="btn btn-outline" id="logout-btn">Log Out</button>
+            </div>
+            
+            <div class="user-tabs-container">
+                <button id="tab-subs" class="user-tab active" onclick="switchUserTab('subs')">
+                    <i class="ph ph-receipt" style="font-size: 1.25rem;"></i> Subscriptions
+                </button>
+                <button id="tab-profile" class="user-tab" onclick="switchUserTab('profile')">
+                    <i class="ph ph-user" style="font-size: 1.25rem;"></i> My Profile
+                </button>
+                <button id="tab-review" class="user-tab" onclick="switchUserTab('review')">
+                    <i class="ph ph-star" style="font-size: 1.25rem;"></i> Review
+                </button>
+            </div>
+
+            <div id="user-subs" class="user-panel active">
+                <h3>Active Subscriptions</h3>
+                <div id="subscriptions-container">
+                    <p class="loading-text">Loading...</p>
+                </div>
+            </div>
+
+            <div id="user-profile" class="user-panel">
+                <h3>Personal & Delivery Profile</h3>
+                <form id="profile-form" class="auth-form" style="display:block; box-shadow:none; padding:0;">
+                    <div class="form-row">
+                        <div class="form-group half"><label>Full Name</label><input type="text" id="profile-name" required></div>
+                        <div class="form-group half"><label>Email (Read Only)</label><input type="email" id="profile-email" readonly style="background:var(--bg-main);"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group half"><label>Height (cm/ft)</label><input type="text" id="profile-height" placeholder="e.g. 180cm"></div>
+                        <div class="form-group half"><label>Weight (kg/lbs)</label><input type="text" id="profile-weight" placeholder="e.g. 75kg"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Food Allergies / Dietary Restrictions</label>
+                        <input type="text" id="profile-allergies" placeholder="e.g. Peanut allergy, Lactose intolerant">
+                    </div>
+                    <div class="form-group">
+                        <label>Delivery Address</label>
+                        <textarea id="profile-address" rows="2" placeholder="Full address in Lahore/Islamabad/Karachi" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Preferred Delivery Time</label>
+                        <select id="profile-time">
+                            <option value="Morning (7AM - 9AM)">Morning (7AM - 9AM)</option>
+                            <option value="Afternoon (12PM - 2PM)">Afternoon (12PM - 2PM)</option>
+                            <option value="Evening (6PM - 8PM)">Evening (6PM - 8PM)</option>
+                        </select>
+                    </div>
+                    <p id="profile-msg" style="margin-bottom: 1rem; font-size: 0.875rem;"></p>
+                    <button type="submit" class="btn btn-primary">Save Profile</button>
+                </form>
+            </div>
+
+            <div id="user-review" class="user-panel">
+                <h3>Leave a Review</h3>
+                <form id="review-form" class="auth-form" style="display:block; box-shadow:none; padding:0;">
+                    <div class="form-group">
+                        <label>Rating (1-5)</label>
+                        <select id="review-rating" required>
+                            <option value="5">⭐⭐⭐⭐⭐ (5/5)</option>
+                            <option value="4">⭐⭐⭐⭐ (4/5)</option>
+                            <option value="3">⭐⭐⭐ (3/5)</option>
+                            <option value="2">⭐⭐ (2/5)</option>
+                            <option value="1">⭐ (1/5)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Your Experience</label>
+                        <textarea id="review-comment" rows="3" placeholder="Tell us how Organic Bite has helped you..." required></textarea>
+                    </div>
+                    <p id="review-msg" style="margin-bottom: 1rem; font-size: 0.875rem;"></p>
+                    <button type="submit" class="btn btn-primary">Submit Review</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkout-modal" class="modal-overlay">
+        <div class="modal-content ">
+            <button class="close-modal" onclick="closeModal('checkout-modal')"><i class="ph ph-x"></i></button>
+            <h2>Checkout</h2>
+            <p>You are about to subscribe to the <strong id="checkout-plan-name"></strong>.</p>
+            
+            <div class="checkout-summary">
+                <div class="summary-row">
+                    <span>Base Price (per week)</span>
+                    <span id="checkout-base-price">PKR 0</span>
+                </div>
+                <div class="summary-row" id="checkout-discount-row" style="display:none; color: var(--primary-color);">
+                    <span>Discount (<span id="checkout-discount-text"></span>%)</span>
+                    <span id="checkout-discount-amount">- PKR 0</span>
+                </div>
+                <div class="summary-row">
+                    <span>Delivery Fee</span>
+                    <span>Free</span>
+                </div>
+                <div class="summary-row">
+                    <span>Total</span>
+                    <span id="checkout-total-price">PKR 0</span>
+                </div>
+            </div>
+
+            <div class="promo-container" style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem;">
+                <input type="text" id="promo-input" placeholder="Enter Promo Code" style="flex: 1; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-main); color: var(--text-main);">
+                <button type="button" class="btn btn-outline" id="apply-promo-btn" style="white-space: nowrap;">Apply</button>
+            </div>
+            <p id="promo-msg" style="font-size:0.875rem; margin-top:-1rem; margin-bottom:1rem;"></p>
+
+            <form id="checkout-form">
+                <h3>Payment Details (Mock)</h3>
+                <div class="form-group">
+                    <label>Card Number</label>
+                    <input type="text" placeholder="XXXX XXXX XXXX XXXX" value="4242 4242 4242 4242" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label>Expiry</label>
+                        <input type="text" placeholder="MM/YY" value="12/28" required>
+                    </div>
+                    <div class="form-group half">
+                        <label>CVC</label>
+                        <input type="text" placeholder="123" value="123" required>
+                    </div>
+                </div>
+                <p id="checkout-error" class="error-text"></p>
+                <button type="submit" class="btn btn-primary full-width">Confirm Payment</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Modal -->
+    <div id="admin-modal" class="modal-overlay">
+        <div class="modal-content modal-large ">
+            <button class="close-modal" onclick="closeModal('admin-modal')"><i class="ph ph-x"></i></button>
+            <div class="dashboard-header">
+                <h2>Admin Control Panel</h2>
+            </div>
+            
+            <div class="auth-tabs" style="margin-bottom: 1rem; flex-wrap: wrap;">
+                <button class="admin-tab active" onclick="switchAdminTab('insights')">Insights</button>
+                <button class="admin-tab" onclick="switchAdminTab('users')">Users</button>
+                <button class="admin-tab" onclick="switchAdminTab('subscriptions')">Subs</button>
+                <button class="admin-tab" onclick="switchAdminTab('cms')">CMS</button>
+                <button class="admin-tab" onclick="switchAdminTab('promos')">Promos</button>
+                <button class="admin-tab" onclick="switchAdminTab('reviews')">Reviews</button>
+                <button class="admin-tab" onclick="switchAdminTab('messages')">Msgs</button>
+            </div>
+            
+            <!-- Insights Tab -->
+            <div id="admin-insights" class="admin-panel active">
+                <div class="insights-grid">
+                    <div class="insight-card">
+                        <i class="ph ph-users"></i>
+                        <h4 id="insight-users">...</h4>
+                        <p>Total Users</p>
+                    </div>
+                    <div class="insight-card">
+                        <i class="ph ph-package"></i>
+                        <h4 id="insight-subs">...</h4>
+                        <p>Active Subscriptions</p>
+                    </div>
+                    <div class="insight-card">
+                        <i class="ph ph-money"></i>
+                        <h4 id="insight-rev">...</h4>
+                        <p>Est. Monthly Revenue</p>
+                    </div>
+                    <div class="insight-card">
+                        <i class="ph ph-envelope"></i>
+                        <h4 id="insight-msgs">...</h4>
+                        <p>Unread Messages</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Users Tab -->
+            <div id="admin-users" class="admin-panel" style="display: none;">
+                <div class="table-responsive">
+                    <table class="admin-table">
+                        <thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Admin</th><th>Joined</th></tr></thead>
+                        <tbody id="admin-users-tbody"><tr><td colspan="5">Loading...</td></tr></tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Subscriptions Tab -->
+            <div id="admin-subscriptions" class="admin-panel" style="display: none;">
+                <div class="table-responsive">
+                    <table class="admin-table">
+                        <thead><tr><th>ID</th><th>User</th><th>Plan</th><th>Status</th><th>Started</th><th>Actions</th></tr></thead>
+                        <tbody id="admin-subs-tbody"><tr><td colspan="6">Loading...</td></tr></tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Messages Tab -->
+            <div id="admin-messages" class="admin-panel" style="display: none;">
+                <div class="table-responsive">
+                    <table class="admin-table">
+                        <thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Goal</th><th>Message</th><th>Actions</th></tr></thead>
+                        <tbody id="admin-msgs-tbody"><tr><td colspan="6">Loading...</td></tr></tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- CMS Tab (Blogs & Plans) -->
+            <div id="admin-cms" class="admin-panel" style="display: none;">
+                <h3>Add / Edit Meal Plan</h3>
+                <form id="add-plan-form" class="cms-form">
+                    <input type="hidden" id="plan-id">
+                    <div class="form-row">
+                        <div class="form-group half"><input type="text" id="plan-name" placeholder="Plan Name" required></div>
+                        <div class="form-group half"><input type="text" id="plan-badge" placeholder="Badge (e.g. Fat Loss)"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group half"><input type="number" id="plan-price" placeholder="Price per week" required></div>
+                        <div class="form-group half"><input type="text" id="plan-image" placeholder="Image URL" value="assets/hero.png" required></div>
+                    </div>
+                    <div class="form-group"><input type="text" id="plan-features" placeholder="Features (comma separated)" required></div>
+                    <div class="form-group"><textarea id="plan-desc" placeholder="Description" rows="2" required></textarea></div>
+                    <div class="form-row">
+                        <button type="submit" id="plan-submit-btn" class="btn btn-outline btn-small">Add Plan</button>
+                        <button type="button" class="btn btn-secondary btn-small" onclick="resetPlanForm()" style="margin-left:0.5rem;">Cancel Edit</button>
+                    </div>
+                </form>
+
+                <h4 style="margin:2rem 0 1rem 0;">Existing Meal Plans</h4>
+                <div class="table-responsive">
+                    <table class="admin-table">
+                        <thead><tr><th>ID</th><th>Name</th><th>Price</th><th>Actions</th></tr></thead>
+                        <tbody id="cms-plans-tbody"></tbody>
+                    </table>
+                </div>
+                
+                <h3 style="margin-top:3rem;">Add / Edit Blog Post</h3>
+                <form id="add-blog-form" class="cms-form">
+                    <input type="hidden" id="blog-id">
+                    <div class="form-group"><input type="text" id="blog-title" placeholder="Blog Title" required></div>
+                    <div class="form-group"><input type="text" id="blog-image" placeholder="Image URL" value="assets/hero.png" required></div>
+                    <div class="form-group"><textarea id="blog-excerpt" placeholder="Excerpt (Short description)" rows="2" required></textarea></div>
+                    <div class="form-group"><textarea id="blog-content" placeholder="Full Content" rows="4" required></textarea></div>
+                    <div class="form-row">
+                        <button type="submit" id="blog-submit-btn" class="btn btn-outline btn-small">Publish Blog</button>
+                        <button type="button" class="btn btn-secondary btn-small" onclick="resetBlogForm()" style="margin-left:0.5rem;">Cancel Edit</button>
+                    </div>
+                </form>
+
+                <h4 style="margin:2rem 0 1rem 0;">Existing Blogs</h4>
+                <div class="table-responsive">
+                    <table class="admin-table">
+                        <thead><tr><th>ID</th><th>Title</th><th>Date</th><th>Actions</th></tr></thead>
+                        <tbody id="cms-blogs-tbody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Promos Tab -->
+            <div id="admin-promos" class="admin-panel" style="display: none;">
+                <h3>Create Promo Code</h3>
+                <form id="add-promo-form" class="cms-form">
+                    <div class="form-row">
+                        <div class="form-group half"><input type="text" id="promo-code" placeholder="Code (e.g. SUMMER20)" required></div>
+                        <div class="form-group half"><input type="number" id="promo-discount" placeholder="Discount %" required></div>
+                    </div>
+                    <button type="submit" class="btn btn-outline btn-small">Create Promo</button>
+                </form>
+
+                <h4 style="margin:2rem 0 1rem 0;">Active Promo Codes</h4>
+                <div class="table-responsive">
+                    <table class="admin-table">
+                        <thead><tr><th>Code</th><th>Discount</th><th>Actions</th></tr></thead>
+                        <tbody id="admin-promos-tbody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Reviews Tab -->
+            <div id="admin-reviews" class="admin-panel" style="display: none;">
+                <h3>User Reviews</h3>
+                <p>Manage reviews and feature the best ones on the homepage.</p>
+                <div class="table-responsive">
+                    <table class="admin-table">
+                        <thead><tr><th>User</th><th>Rating</th><th>Comment</th><th>Featured</th><th>Actions</th></tr></thead>
+                        <tbody id="admin-reviews-tbody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog Reader Modal -->
+    <div id="blog-modal" class="modal-overlay">
+        <div class="modal-content modal-large">
+            <button class="close-modal" onclick="closeModal('blog-modal')"><i class="ph ph-x"></i></button>
+            <div id="blog-reader-container">
+                <!-- Dynamic Content Here -->
+                <p>Loading...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Legal Modal -->
+    <div id="legal-modal" class="modal-overlay">
+        <div class="modal-content modal-large">
+            <button class="close-modal" onclick="closeModal('legal-modal')"><i class="ph ph-x"></i></button>
+            <h2 id="legal-title" style="margin-bottom: 1.5rem; color: var(--primary-color);">Legal Document</h2>
+            <div id="legal-content" class="blog-reader-content">
+                <!-- Legal content goes here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Builder Modal -->
+    <div id="custom-builder-modal" class="modal-overlay">
+        <div class="modal-content modal-xl fade-in-up">
+            <button class="close-modal" onclick="closeModal('custom-builder-modal')"><i class="ph ph-x"></i></button>
+            
+            <div class="builder-header">
+                <h2>Build Your Perfect Meal</h2>
+                <p>Select one item from each category. Real-time macros will update as you build.</p>
+            </div>
+
+            <div class="builder-layout">
+                <div class="builder-selection">
+                    <div class="builder-tabs">
+                        <button class="builder-tab active" onclick="switchBuilderCategory('protein')">Proteins</button>
+                        <button class="builder-tab" onclick="switchBuilderCategory('carb')">Carbs</button>
+                        <button class="builder-tab" onclick="switchBuilderCategory('veggie')">Veggies</button>
+                    </div>
+                    
+                    <div id="builder-items-grid" class="builder-items-grid">
+                        <!-- Ingredients will be loaded here -->
+                    </div>
+                </div>
+
+                <div class="builder-summary">
+                    <h3>Meal Summary</h3>
+                    <div class="summary-slots">
+                        <div class="summary-slot" id="slot-protein">
+                            <span class="slot-label">Protein:</span>
+                            <span class="slot-value">None selected</span>
+                        </div>
+                        <div class="summary-slot" id="slot-carb">
+                            <span class="slot-label">Carb:</span>
+                            <span class="slot-value">None selected</span>
+                        </div>
+                        <div class="summary-slot" id="slot-veggie">
+                            <span class="slot-label">Veggie:</span>
+                            <span class="slot-value">None selected</span>
+                        </div>
+                    </div>
+
+                    <div class="macro-dashboard">
+                        <div class="macro-item">
+                            <span class="macro-val" id="total-calories">0</span>
+                            <span class="macro-label">Calories</span>
+                        </div>
+                        <div class="macro-item">
+                            <span class="macro-val" id="total-protein">0g</span>
+                            <span class="macro-label">Protein</span>
+                        </div>
+                        <div class="macro-item">
+                            <span class="macro-val" id="total-carbs">0g</span>
+                            <span class="macro-label">Carbs</span>
+                        </div>
+                        <div class="macro-item">
+                            <span class="macro-val" id="total-fat">0g</span>
+                            <span class="macro-label">Fat</span>
+                        </div>
+                    </div>
+
+                    <button id="confirm-custom-meal" class="btn btn-primary full-width" disabled onclick="submitCustomMeal()">Order This Meal &rarr;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
