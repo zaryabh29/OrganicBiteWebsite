@@ -1,8 +1,7 @@
 // API Configuration — auto-detect environment
-// IMPORTANT: Replace YOUR_RENDER_APP_NAME with your actual Render service name after deploying
 const API_URL = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
     ? 'http://localhost:5000/api'
-    : 'https://YOUR_RENDER_APP_NAME.onrender.com/api';
+    : 'https://organicbite-api.onrender.com/api';
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Animations are now handled by pure CSS @keyframes — no JS needed.
